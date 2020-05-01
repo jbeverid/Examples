@@ -1,0 +1,30 @@
+// variables
+$success-color: #28a745!important;
+$primary-color: #17a2b8!important;
+$warning-color: #ffc107!important;
+$danger-color: #dc3545!important;
+$default-color: #e9ecef !important;
+
+.progress-container {
+  display: flex;
+  height: 1rem;
+  overflow: hidden;
+  font-size: .75rem;
+  background-color: #e9ecef;
+  border-radius: .25rem;
+
+  .progress-amount {
+    color: #FFF;
+    text-align: center;
+    background-color: $primary-color;
+    width: 25%;
+  }
+}
+
+// Probably could make this a mixin, but leaving it this way for readability
+:host(.primary) .progress-container .progress-amount { background-color: $primary-color }
+:host(.success) .progress-container .progress-amount { background-color: $success-color }
+:host(.warning) .progress-container .progress-amount { background-color: $warning-color }
+:host(.danger) .progress-container .progress-amount { background-color: $danger-color }
+
+
