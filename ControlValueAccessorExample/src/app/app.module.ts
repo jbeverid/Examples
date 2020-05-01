@@ -2,17 +2,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { AnimatedProgressBarComponent } from './animated-progress-bar/animated-progress-bar.component';
+import { SignatureBlockComponent } from './signature-block/signature-block.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AnimatedProgressBarComponent
+    SignatureBlockComponent
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule
+    CommonModule,
+    ReactiveFormsModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
