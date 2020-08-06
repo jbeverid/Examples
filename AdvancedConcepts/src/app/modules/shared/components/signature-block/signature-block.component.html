@@ -1,0 +1,28 @@
+<div class="signature-container">
+    <ng-container *ngIf="value == null; else Signed">
+      <ng-container *ngTemplateOutlet="NotSigned"></ng-container>
+    </ng-container>
+</div>
+
+<ng-template #NotSigned>
+  <div class="icon">
+    <fa-icon [icon]="faPenAlt" size="2x"></fa-icon>
+  </div>
+  <div class="signature-area text-center" (click)="Sign()">
+    <label class="text-muted">Click to Sign</label>
+  </div>
+</ng-template>
+
+<ng-template #Signed>
+  <div class="icon">
+    <fa-icon [icon]="faSignature" size="2x"></fa-icon>
+  </div>
+  <div class="signed-details">
+    <div>
+      <label class="name">{{ value.PersonInfo.FirstName }} {{ value.PersonInfo.LastName }}</label>
+    </div>
+    <div>
+      <label class="date">{{ value.Date | date: 'MM/dd/yyyy' }}</label>
+    </div>
+  </div>
+</ng-template>
