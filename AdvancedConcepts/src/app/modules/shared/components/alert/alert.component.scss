@@ -1,0 +1,23 @@
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+
+// The host css selector allows you to create various styles for your components.
+:host(.danger) {
+  color: $state-danger-text;
+  background-color: $state-danger-bg;
+  border: 1px solid $state-danger-border;
+}
+:host(.warning) {
+  color: $state-warning-text;
+  background-color: $state-warning-bg;
+  border: 1px solid $state-warning-border;
+}
+:host(.info) {
+  color: $state-info-text;
+  background-color: $state-info-bg;
+  border: 1px solid $state-danger-border;
+}
+:host(.success) {
+  color: $state-success-text;
+  background-color: $state-success-bg;
+  border: 1px solid $state-success-border;
+}

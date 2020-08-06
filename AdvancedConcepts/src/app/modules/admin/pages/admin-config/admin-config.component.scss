@@ -1,0 +1,15 @@
+.config-option {
+  display: block;
+
+  label {
+    display: inline;
+  }
+  input[type="checkbox"] {
+    display: inline;
+    margin-top: -5px;
+  }
+
+  .check-control + label {
+    margin-left: 15px;
+  }
+}

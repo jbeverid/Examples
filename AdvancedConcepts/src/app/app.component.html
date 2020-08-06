@@ -1,0 +1,44 @@
+<main>
+  <div class="side-nav-background"></div>
+  <aside class="nav side-nav">
+    <ul>
+      <li routerLinkActive="active">
+        <a [routerLink]="['/Home/']" queryParamsHandling="preserve" routerLinkActive="active" class="text-uppercase">Home</a>
+        <ul routerLinkActive="expanded">
+          <li [routerLink]="['/Home/License']" routerLinkActive="active" class="text-uppercase"><a>License</a></li>
+          <li [routerLink]="['/Home/Overview']" routerLinkActive="active" class="text-uppercase"><a>Overview</a></li>
+        </ul>
+      </li>
+      <li *ngIf="AreaPermissions.IsComponentAreaEnabled || (!AreaPermissions.IsComponentAreaEnabled && Config.IsShowingUnauthorizedAreas)" routerLinkActive="active">
+        <a [routerLink]="['/Components/']" queryParamsHandling="preserve" routerLinkActive="active" class="text-uppercase">Components</a>
+        <ul routerLinkActive="expanded">
+          <li [routerLink]="['/Components/Overview']" routerLinkActive="active" class="text-uppercase"><a>Overview</a></li>
+        </ul>
+      </li>
+      <li *ngIf="AreaPermissions.IsDirectiveAreaEnabled || (!AreaPermissions.IsDirectiveAreaEnabled && Config.IsShowingUnauthorizedAreas)" routerLinkActive="active">
+        <a [routerLink]="['/Directives/']" queryParamsHandling="preserve" routerLinkActive="active" class="text-uppercase">Directives</a>
+        <ul routerLinkActive="expanded">
+          <li [routerLink]="['/Directives/Overview']" routerLinkActive="active" class="text-uppercase"><a>Overview</a></li>
+        </ul>
+      </li>
+      <li routerLinkActive="active">
+        <a [routerLink]="['/Admin/']" queryParamsHandling="preserve" routerLinkActive="active" class="text-uppercase">Admin</a>
+        <ul routerLinkActive="expanded">
+          <li [routerLink]="['/Admin/Configuration']" routerLinkActive="active" class="text-uppercase"><a>Configuration</a></li>
+        </ul>
+      </li>
+    </ul>
+  </aside>
+  <section class="tab-content-outlet">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12">
+          <app-alert></app-alert>
+        </div>
+      </div>
+      <div style="overflow-x: hidden !important;" RemainingHeight>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </section>
+</main>

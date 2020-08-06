@@ -1,0 +1,33 @@
+<h3 class="text-center">License Agreement</h3>
+<hr />
+<app-mit-license></app-mit-license>
+<form [formGroup]="Form">
+  <section formGroupName="FormInfo">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+        <label for="txtFirstName" class="sr-only">First Name</label>
+        <input id="txtFirstName" type="text" placeholder="First Name" class="form-control" AppInlineValidation ErrorMessage="First name is required." formControlName="FirstName" />
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+        <label for="txtLastName" class="sr-only">Last Name</label>
+        <input id="txtLastName" type="text" placeholder="Last Name" class="form-control" AppInlineValidation ErrorMessage="Last name is required." formControlName="LastName" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" AppInlineValidation ErrorMessage="You must agree to the license." formControlName="HasAgreed" /> I agree to abide by the license for this software.
+          </label>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="row" style="margin-top: 10px;">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+      <app-signature-block (OnSignedEvent)="OnLicenseSigned($event)"
+                           [CurrentPerson]="Form.controls['FormInfo'].value"
+                           formControlName="Signature"></app-signature-block>
+    </div>
+  </div>
+</form>

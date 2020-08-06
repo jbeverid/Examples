@@ -1,0 +1,6 @@
+<div *ngIf="CurrentAlert != null" [ngClass]="{ 'alert': true, 'alert-danger': CurrentAlert.Type === eAlertType.Error, 'alert-warning': CurrentAlert.Type === eAlertType.Warning, 'alert-info': CurrentAlert.Type === eAlertType.Info, 'alert-success': CurrentAlert.Type === eAlertType.Success }" role="alert">
+  {{ CurrentAlert?.Message }}
+  <button *ngIf="CurrentAlert.Persistence !== eAlertPersistence.Always" type="button" class="close" aria-label="Close" (click)="ClearMessage()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
