@@ -5,6 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build:lib": "npm run build --project=\"my-lib\" --prefix=\"./projects/my-lib/\"",
+    "package:lib": "npm run package --prefix=\"./projects/my-lib/\"",
+    "debug:schematics": "npm run debug:schematics --prefix=\"./projects/my-lib/\"",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
