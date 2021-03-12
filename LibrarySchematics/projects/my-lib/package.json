@@ -5,7 +5,9 @@
   "scripts": {
     "build": "ng build && ../../node_modules/.bin/tsc -p tsconfig.schematics.json",
     "package": "cd ../../dist/my-lib && npm pack",
+    "build:schematics": "../../node_modules/.bin/tsc -p tsconfig.schematics.json",
     "debug:schematics": "../../node_modules/.bin/tsc -p tsconfig.schematics.json --watch",
+    "test:schematics": "npm run build:schematics && jasmine schematics/**/*.spec.js",
     "copy:schemas": "cpy --parents schematics/*/schema.json ../../dist/my-lib/",
     "copy:files": "cpy --parents schematics/*/files/** ../../dist/my-lib/",
     "copy:collection": "cpy schematics/collection.json ../../dist/my-lib/schematics/collection.json",
