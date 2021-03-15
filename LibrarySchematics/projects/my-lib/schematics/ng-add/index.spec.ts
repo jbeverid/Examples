@@ -9,7 +9,6 @@ describe('ng-add', () => {
   });
 
   it('works', () => {
-    console.log(runner);
     expect(true).toEqual(true);
   });
 });
